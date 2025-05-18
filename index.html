@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
+
+    <title>App Landing Page</title>
+    <style>
+        *{
+            user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; 
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 500;
+            /* Slightly darker text */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+            /* Primary blue on hover */
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+        }
+
+
+        .jumbotron {
+            background-image: linear-gradient(to right, #6c75d9, #007bff);
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            padding: 100px 20px;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .jumbotron h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            /* Use semi-bold for button */
+            transition: background-color 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+
+        #content {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        #content h1 {
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .col-md-4 {
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            max-width: 1200px;
+
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 0.25rem;
+
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            /* Move card up slightly on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            /* Increase shadow on hover */
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .row.equal-height {
+            display: flex;
+            flex-wrap: wrap;
+            /* Important for responsiveness */
+        }
+
+        .row.equal-height>.col-md-4 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            flex-grow: 1;
+            /* Allows cards within the column to grow to the same height */
+        }
+
+        .card-body {
+            flex-grow: 1;
+            /* Allows the body to take up available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Distributes space around content */
+        }
+
+        .card-img-top {
+            height: 200px;
+            /* Adjust to your desired height */
+            object-fit: cover;
+            /* This will cover the area, potentially cropping the image */
+            object-fit: contain;
+            /* This will fit the image within the area, potentially adding empty space */
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #555;
+            /* Slightly darker text */
+        }
+
+
+        #footer {
+            background-color: #f0f0f0;
+            /* Light gray background */
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #666;
+
+        }
+
+        #footer h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        #footer p {
+            color: #6c757d;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        #footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer li {
+            margin-bottom: 10px;
+        }
+
+
+        #appstore {
+            width: 150px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        #appstore:hover {
+            transform: scale(1.05);
+            color: #0056b3;
+
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 992px) {
+            .navbar-toggler {
+                margin-right: 0;
+            }
+
+            .jumbotron h1 {
+                font-size: 2.5rem;
+                /* Adjust heading size on smaller screens */
+            }
+
+            .jumbotron p {
+                font-size: 1.1rem;
+                /* Adjust paragraph size */
+            }
+
+            .card-title {
+                font-size: 1.25rem;
+                /* Adjust card title size */
+            }
+
+            .card-text {
+                font-size: 1rem;
+                /* Adjust card text size */
+            }
+
+            .card {
+                margin-bottom: 30px;
+                /* Add margin between cards on small screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .jumbotron {
+                padding: 80px 15px;
+            }
+
+            .jumbotron h1 {
+                font-size: 2rem;
+            }
+
+            .jumbotron p {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="150">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
+        <a class="navbar-brand" href="#">My App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href=".jumbotron">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Download My App</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="email" placeholder="Email" aria-label="Email">
+                <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main>
+
+        <section>
+            <div class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="display-4">Boost Your Productivity</h1>
+                    <p class="lead">All-in-one app designed to simplify your workflow and save time.</p>
+                    <hr class="my-4">
+                    <p>Smart tools, intuitive design, and seamless experience — everything you need, right at your
+                        fingertips.</p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section><!-- About Section -->
+            <div class="container" id="about">
+                <div class="row text-center equal-height">
+                    <!-- Feature 1: Real-time Sync -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card py-4">
+                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80"
+                                class="card-img-top" alt="Real-time sync" loading="lazy">
+
+                            <div class="card-body">
+                                <i class="fas fa-sync-alt fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Real-time Sync</h5>
+                                <p class="card-text">Stay connected and in control with real-time data synchronization
+                                    across all your devices. Whether you're updating a task on your phone or editing a
+                                    file on your laptop, every change is instantly reflected everywhere. Enjoy a
+                                    seamless, consistent experience—anytime, anywhere.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Secure Login -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card py-4">
+                            <img src="https://plus.unsplash.com/premium_photo-1681487843757-8a6d04422652?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFNlY3VyZSUyMExvZ2lufGVufDB8fDB8fHww"
+                                class="card-img-top" alt="Secure login" loading="lazy">
+
+
+                            <div class="card-body">
+                                <i class="fas fa-fingerprint fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Secure Login</h5>
+                                <p class="card-text">Protect your data with state-of-the-art security features. Our app
+                                    uses biometric recognition, two-factor authentication, and advanced encryption to
+                                    ensure your account remains safe and private at all times. Login securely from any
+                                    device with confidence and peace of mind.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Analytics Dashboard -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card py-4">
+                            <img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80"
+                                class="card-img-top" alt="Secure login" loading="lazy">
+
+                            <div class="card-body">
+                                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Analytics Dashboard</h5>
+                                <p class="card-text">Get actionable insights at your fingertips with our intuitive
+                                    analytics dashboard. Track performance, monitor trends, and make informed decisions
+                                    in real time. Whether you're a beginner or a data pro, our visual tools simplify
+                                    complex metrics into easy-to-understand charts and graphs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>Email: info@example.com</p>
+                        <p>Phone: +123 456 7890</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Address</h5>
+                        <p>123 Main St, Anytown, USA</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Download</h5>
+                        <a href="#">
+                            <img id="appstore"
+                                src="https://w7.pngwing.com/pngs/822/688/png-transparent-apple-on-the-app-store-screenshot-iphone-app-store-google-play-store-electronics-text-logo-thumbnail.png"
+                                alt="Download on the App Store" width="120">
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <p>&copy; 2025 My App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
